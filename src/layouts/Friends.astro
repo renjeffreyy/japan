@@ -1,0 +1,37 @@
+---
+import { Code } from "astro:components";
+import Polaroid from "../components/Polaroid.astro";
+import { Image } from "astro:assets";
+
+import JeffFlowers from "../assets/jeff-flower.JPG";
+
+const images = [
+  {
+    img: JeffFlowers,
+    alt: "Jeffrey in front of some flowers",
+  },
+];
+---
+
+<section>
+  <h2 class="text-2xl">Friends</h2>
+  <div>
+    {
+      images.map((data) => 
+        <Polaroid title={data.alt}>
+          <Image
+            src={data.img}
+            alt={data.alt}
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </Polaroid>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+
+</script>

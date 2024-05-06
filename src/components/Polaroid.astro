@@ -1,0 +1,15 @@
+---
+interface Props {
+  img: string;
+  title: string;
+}
+
+const {  title } = Astro.props;
+---
+
+<div class="w-64 px-4 py-8 bg-white shadow-md">
+  <div class="w-full pt-[100%] relative object-cover">
+    <slot />
+  </div>
+  <p class="text-center">{title}</p>
+</div>
