@@ -1,7 +1,20 @@
+---
+import { Image } from "astro:assets";
+
+import TokyoTower from '../assets/tokyo-tower.png'
+---
+
 <section>
-    <h1>
-        <span>Jeffrey</span>
-        <span>in</span>
-        <span>Japan</span>
+    <div>
+        <Image 
+            src={TokyoTower}
+            alt="Tokyo Tower"
+            width="300"
+        />
+    </div>
+    <h1 class="font-serif text-[50px] flex flex-wrap gap-x-2">
+        <span class="vertical-text">Jeffrey</span>
+        <span class="vertical-text">in</span>
+        <span class="vertical-text">Japan</span>
     </h1>
 </section>
