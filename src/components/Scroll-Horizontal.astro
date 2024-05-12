@@ -1,0 +1,21 @@
+---
+
+---
+
+<div class="flex relative py-8">
+    <div class="flex flex-col justify-center items-center">
+		<div class="bg-wood-brown h-4 w-8 rounded-t-md"></div>
+		<div class="w-20 h-80 bg-dark-blue rounded-t-md flex items-center justify-center">
+            <div class="flex align-center justify-center p-2 bg-white ">
+                <slot name="scroll-label" />
+            </div>
+        </div>
+		<div class="w-12 h-2 bg-mustard rounded-t-full -mt-2"></div>
+		<div class="bg-wood-brown h-4 w-8 rounded-t-md"></div>
+	</div>
+    <div class="p-4 bg-dark-blue my-6 rounded-tr-md rounded-br-md">
+        <div class="p-2 bg-paper h-full">
+            <slot name="scroll-content" />
+        </div>
+    </div>
+</div>

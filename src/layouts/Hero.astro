@@ -1,20 +1,33 @@
 ---
 import { Image } from "astro:assets";
-
-import TokyoTower from '../assets/tokyo-tower.png'
+import ScrollHorizontal from "../components/Scroll-Horizontal.astro";
 ---
 
 <section>
-    <div>
-        <Image 
-            src={TokyoTower}
-            alt="Tokyo Tower"
-            width="300"
-        />
+  <ScrollHorizontal>
+    <div slot="scroll-label" class="flex relative">
+      <span class="font-serif [writing-mode:vertical-rl] -scale-100 text-center">
+        Wander, Explore and Discover
+      </span>
+      <div class="flex flex-col-reverse [&>*]:-rotate-90">
+          <span class="block"> さ </span>
+          <span>ま</span>
+          <span>よ</span>
+          <span>い</span>
+          <span>探</span>
+          <span>索</span>
+          <span>し,</span>
+          <span>発</span>
+          <span>見</span>
+          <span>す</span>
+          <span>る</span>
+      </div>
     </div>
-    <h1 class="font-serif text-[50px] flex flex-wrap gap-x-2">
-        <span class="vertical-text">Jeffrey</span>
-        <span class="vertical-text">in</span>
-        <span class="vertical-text">Japan</span>
+    <h1
+      slot="scroll-content"
+      class="font-serif text-[60px] xs:text-[80px] sm:text-[100px] md:text-[120px] flex flex-wrap gap-x-2"
+    >
+      <span class="">Jeffrey in Japan</span>
     </h1>
+  </ScrollHorizontal>
 </section>
