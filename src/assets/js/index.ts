@@ -3,17 +3,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
     
 gsap.registerPlugin(ScrollTrigger);
 
-const timeline = gsap.timeline()
+const timeline = gsap.timeline({
 
-timeline.to(".scroll-content", {
-    scrollTrigger: {
+})
+
+
+//pin section top
+timeline.to("#HeroEl",{
+    scrollTrigger:{
         trigger: ".scroll-wrapper",
-        scrub: 1,
-        markers:true,
-        start: "top",
-        end: "bottom",
+        pin: true,
+        start:"top",
+        end: "2000px"
     },
-    x: 500
-  });
 
-console.log(timeline)
+}).from("#ScrollCylinder",{
+    scrollTrigger:{
+       trigger: "#HeroEl",
+       scrub: 1,
+       start: "top",
+       end:"200"
+    },
+    scale:2,
+    x:"50vw",
+
+    rotate: "90deg"
+}).from(".scroll-content", {
+    scrollTrigger: {
+        trigger: "#HeroEl",
+        scrub: 3,
+        markers:true,
+         start: "500px",
+         end: "center 200px",
+    },
+    x: `-200%`,
+  });
