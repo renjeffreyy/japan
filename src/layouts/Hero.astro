@@ -6,21 +6,23 @@ import ScrollHorizontal from "../components/Scroll-Horizontal.astro";
 <section id="HeroEl">
   <ScrollHorizontal>
     <div slot="scroll-label" class="flex relative">
-      <span class="font-serif [writing-mode:vertical-rl] -scale-100 text-center">
+      <span
+        class="font-serif [writing-mode:vertical-rl] -scale-100 text-center"
+      >
         Wander, Explore and Discover
       </span>
       <div class="flex flex-col-reverse [&>*]:-rotate-90">
-          <span class="block"> さ </span>
-          <span>ま</span>
-          <span>よ</span>
-          <span>い</span>
-          <span>探</span>
-          <span>索</span>
-          <span>し,</span>
-          <span>発</span>
-          <span>見</span>
-          <span>す</span>
-          <span>る</span>
+        <span class="block"> さ </span>
+        <span>ま</span>
+        <span>よ</span>
+        <span>い</span>
+        <span>探</span>
+        <span>索</span>
+        <span>し,</span>
+        <span>発</span>
+        <span>見</span>
+        <span>す</span>
+        <span>る</span>
       </div>
     </div>
     <h1
@@ -31,3 +33,41 @@ import ScrollHorizontal from "../components/Scroll-Horizontal.astro";
     </h1>
   </ScrollHorizontal>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  const heroTL = gsap.timeline();
+
+  heroTL
+    .to("#HeroEl", {
+      scrollTrigger: {
+        trigger: ".scroll-wrapper",
+        pin: true,
+        start: "top",
+        end: "2000px",
+      },
+    })
+    .from("#ScrollCylinder", {
+      scrollTrigger: {
+        trigger: "#HeroEl",
+        scrub: 1,
+        start: "top",
+        end: "200",
+      },
+      scale: 2,
+      x: "50vw",
+
+      rotate: "90deg",
+    })
+    .from(".scroll-content", {
+      scrollTrigger: {
+        trigger: "#HeroEl",
+        scrub: 3,
+        markers: true,
+        start: "500px",
+        end: "center 200px",
+      },
+      x: `-200%`,
+    });
+</script>
