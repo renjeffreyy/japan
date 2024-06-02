@@ -15,33 +15,9 @@
     <div class="w-12 h-2 bg-mustard rounded-t-full -mt-2"></div>
     <div class="bg-wood-brown h-4 w-8 rounded-t-md"></div>
   </div>
-  <div class="scroll-cntent p-4 bg-dark-blue my-6 rounded-tr-md rounded-br-mds translate-x-[calc(-100%_-_80px)]">
+  <div class="scroll-content p-4 bg-dark-blue my-6 rounded-tr-md rounded-br-mds translate-x-[0]">
     <div class="p-2 bg-paper h-full">
       <slot name="scroll-content" />
     </div>
   </div>
 </div>
-
-<script>
-  import { gsap } from "gsap";
-
-  gsap.to(".scroll-cntent", {
-    scrollTrigger: {
-        trigger: ".scroll-wrapper",
-        scrub: 1,
-        markers:true,
-        start: "top",
-        end: "bottom",
-        duration:0.3,
-        snap: {
-            snapTo: 1 / 10, // progress increment
-            // or "labels" or function or Array
-            duration: 10,
-            directional: true
-            // other callbacks: onStart, onInterrupt
-        },
-    },
-    x: 500
-
-  });
-</script>
